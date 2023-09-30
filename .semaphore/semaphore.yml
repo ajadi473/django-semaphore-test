@@ -16,3 +16,24 @@ blocks:
             - cache restore
             - pip install --cache-dir .pip_cache -r requirements.txt
             - cache store
+  - name: TEST
+    task:
+      jobs:
+        - name: Unit Test Job
+          commands:
+            - sem-version python 3.9
+            - checkout
+            - cache restore
+            - pip install --cache-dir .pip_cache -r requirements.txt
+            - cd martor_demo
+            - python manage.py makemigrations
+            - python manage.py migrate
+            - python manage.py test
+        - name: Deploy Checklist Job
+          commands:
+            - cd flight_backend_api
+            - python manage.py check --deploy
+        - name: Style Job
+          commands:
+            - pip install flake8
+            - flake8 martor_demo/ --max-line-length=127
