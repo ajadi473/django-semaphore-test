@@ -30,7 +30,7 @@ blocks:
             - python manage.py test
         - name: Deploy Checklist Job
           commands:
-            - python manage.py check --deploy
+            - python flight_backend_api/manage.py check --deploy
         - name: Style Job
           commands:
             - pip install flake8
