@@ -28,8 +28,8 @@ blocks:
             - python manage.py makemigrations
             - python manage.py migrate
             - python manage.py test
-        - name: Deploy Checklist Job
-          commands:
+        # - name: Deploy Checklist Job
+          # commands:
             # - cd flight_backend_api
             # - python manage.py check --deploy
         - name: Style Job
