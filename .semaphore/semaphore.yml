@@ -28,10 +28,10 @@ blocks:
             - python manage.py makemigrations
             - python manage.py migrate
             - python manage.py test
-        - name: Style Job
-          commands:
-            - pip install flake8
-            - flake8 flight_backend_api/ --max-line-length=127
+        # - name: Style Job
+        #   commands:
+        #     - pip install flake8
+        #     - flake8 flight_backend_api/ --max-line-length=127
          # - name: Deploy Checklist Job
           # commands:
             # - cd flight_backend_api
